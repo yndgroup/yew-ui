@@ -13,4 +13,3 @@ authors = ["yangdaqiong <ydaqiong@gmail.com>"]
 
 [workspace.dependencies]
 yew = { version = "0.21", features = ["csr"] }
-gloo = "0.11.0"

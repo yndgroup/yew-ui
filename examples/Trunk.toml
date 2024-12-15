@@ -1,0 +1,30 @@
+[build]
+target = "index.html"
+# release = true
+# dist = "dist"
+# public_url = "./"
+
+# [watch]
+# ignore = ["src"]
+
+# [[assets]]
+# source = "static/logo.png"
+# target = "images/logo.png"
+
+# [[assets]]
+# source = "styles/main.css"
+# inline = true
+
+# [[hooks]]
+# stage = "pre-build"
+# command = "npm run build-css"
+
+# [[hooks]]
+# stage = "post-build"
+# command = "echo 'Build complete!'"
+
+[serve]
+# proxy_backend = "http://localhost:3000"
+# proxy_rewrite = true
+port = 8900
+open = true

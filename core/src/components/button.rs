@@ -1,4 +1,3 @@
-use gloo::console::log;
 use yew::prelude::*;
 
 use crate::components::theme::TypeStyle;
@@ -24,7 +23,6 @@ pub struct Props {
 pub fn button(props: &Props) -> Html {
     let click_handler = props.click.clone();
     let click = Callback::from(move |_event: MouseEvent| {
-        log!("clicked");
         click_handler.emit(());
     });
 

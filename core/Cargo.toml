@@ -1,14 +1,21 @@
 [package]
 name = "yew-ui"
 version = { workspace = true }
-edition =  { workspace = true }
-license =  { workspace = true }
-repository =  { workspace = true }
-description =  { workspace = true }
-authors = { workspace = true } 
+edition = { workspace = true }
+license = { workspace = true }
+repository = { workspace = true }
+description = { workspace = true }
+authors = { workspace = true }
 readme = "../README.md"
 license-file = "../LICENSE.txt"
 
 [dependencies]
-yew =  { workspace = true }
-gloo =  { workspace = true }
+yew = { workspace = true }
+gloo = { version = "0.11.0" }
+
+[features]
+default = ["components"]
+full = ["components", "gloo", "toolkit"]
+components = []
+toolkit = []
+gloo = []

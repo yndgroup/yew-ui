@@ -1,2 +1,10 @@
+
+#[cfg(feature = "components")]
 pub mod components;
-pub mod prelude;
+
+#[cfg(feature = "toolkit")]
+pub mod toolkit;
+
+#[cfg(feature = "gloo")]
+pub use gloo;
+

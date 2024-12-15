@@ -1,11 +1,13 @@
-use web_sys::console::log;
 use yew::prelude::*;
+use yew_ui::components::prelude::*;
+use yew_ui::gloo::console::log;
 
-use yew_ui::components::{theme::TypeStyle, Button};
-use gloo::console::log;
+use yew_ui::toolkit::math::add;
+
 
 #[function_component(App)]
 fn app() -> Html {
+    log!(add(1, 2));
     html! {
         <main class="container">
         <Button text="Primary 按钮" click={|_| log!("点击了确认按钮")} r#type={TypeStyle::Primary}/>
