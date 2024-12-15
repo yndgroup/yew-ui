@@ -9,4 +9,4 @@ A collection of UI components for yew.
 - [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer).
 
 ## License
-This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
+This project is licensed under the MIT License. See the [LICENSE](./LICENSE.txt) file for details.
