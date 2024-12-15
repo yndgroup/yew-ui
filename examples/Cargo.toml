@@ -10,7 +10,7 @@ path = "./src/main.rs"
 [dependencies]
 yew =  { workspace = true }
 gloo = { workspace = true }
-yew_ui = { path = "../core" }
+yew-ui = { path = "../core" }
 wasm-bindgen = "0.2"
 wasm-bindgen-futures = "0.4"
 web-sys = "0.3"
