@@ -1,13 +1,13 @@
 [package]
-name = "yew_ui"
+name = "yew-ui"
 version = { workspace = true }
 edition =  { workspace = true }
-license =  { workspace = true }
+# license =  { workspace = true }
 repository =  { workspace = true }
 description =  { workspace = true }
 authors = { workspace = true } 
 readme = "../README.md"
-license-file = "../LICENSE.txt"
+license = "../LICENSE.txt"
 
 [dependencies]
 yew =  { workspace = true }
