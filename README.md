@@ -14,11 +14,11 @@ A collection of UI components for yew.
 ![img](./docs/assets/button.jpg)
 
 ## components
-- 安装trunk服务模块
+- install trunk
 ```
 cargo install trunk --locked
 ```
-- 安装wasm32-unknown-unknown
+- install wasm32-unknown-unknown
 ```
 rustup target add wasm32-unknown-unknown
 ```
