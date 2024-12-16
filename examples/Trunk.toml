@@ -4,7 +4,7 @@ target = "index.html"
 # dist = "dist"
 # public_url = "./"
 
-# [watch]
+[watch]
 # ignore = ["src"]
 
 # [[assets]]
