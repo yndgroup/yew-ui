@@ -7,6 +7,8 @@ A collection of UI components for yew.
 - [yew](https://yew.rs/)
 - [gloo](https://docs.rs/gloo/latest/gloo/)
 - [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer).
+- [trunk](https://trunkrs.dev/)
+- [tailwindcss](https://tailwindcss.com/)
 
 ## Button
 ![img](./docs/assets/button.jpg)
