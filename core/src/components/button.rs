@@ -5,7 +5,7 @@ use crate::components::theme::TypeStyle;
 use super::theme::{Rounded, SizeStyle};
 
 #[derive(Properties, PartialEq, Debug)]
-pub struct Props {
+pub struct ButtonProps {
     #[prop_or_default]
     pub text: Option<String>,
 
@@ -35,7 +35,7 @@ pub struct Props {
 }
 
 #[function_component(Button)]
-pub fn button(props: &Props) -> Html {
+pub fn button(props: &ButtonProps) -> Html {
     let click_handler = props.click.clone();
     let click = Callback::from(move |_event: MouseEvent| {
         click_handler.emit(());
@@ -125,7 +125,6 @@ pub fn button(props: &Props) -> Html {
         SizeStyle::Xs => {
             type_style = format!("{} text-xs", type_style);
         }
-        _ => type_style = format!("{} text-base", type_style),
     };
 
     match props.rounded {
@@ -153,7 +152,6 @@ pub fn button(props: &Props) -> Html {
         Rounded::None => {
             type_style = format!("{} rounded-none", type_style);
         }
-        _ => type_style = format!("{} rounded-none", type_style),
     }
 
     if props.disabled {

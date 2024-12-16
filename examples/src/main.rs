@@ -1,5 +1,6 @@
 use yew::prelude::*;
 use yew_ui::components::prelude::*;
+use yew_ui::components::svg::IconName;
 use yew_ui::gloo::console::log;
 use yew_ui::gloo::dialogs::alert;
 
@@ -93,6 +94,13 @@ fn app() -> Html {
             <dd class="pb-6">
                 <Button text="console" rounded={Rounded::Full} custom_class="mb-2 mr-2" click={|_| log!("The button has been clicked")} r#type={TypeStyle::Success}/>
                 <Button text="alert" rounded={Rounded::Full} custom_class="mb-2" click={|_| alert("The button has been clicked")} r#type={TypeStyle::Success}/>
+            </dd>
+        </dl>
+        <hr />
+        <dl class="mt-4">
+            <dt class="py-4 text-2xl">{"Icon"}</dt>
+            <dd class="pb-6">
+                <Icon name={IconName::Home} color={Colors::Red(Number::N500)}/>
             </dd>
         </dl>
     </main>

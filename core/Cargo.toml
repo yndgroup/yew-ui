@@ -12,6 +12,7 @@ license-file = "../LICENSE.txt"
 [dependencies]
 yew = { workspace = true }
 gloo = { version = "0.11.0" }
+base64 = "0.22.1"
 
 [features]
 default = ["components"]
