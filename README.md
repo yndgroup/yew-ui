@@ -11,6 +11,16 @@ A collection of UI components for yew.
 ## Button
 ![img](./docs/assets/button.jpg)
 
+## components
+- 安装trunk服务模块
+```
+cargo install trunk --locked
+```
+- 安装wasm32-unknown-unknown
+```
+rustup target add wasm32-unknown-unknown
+```
+
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](./LICENSE.txt) file for details.
