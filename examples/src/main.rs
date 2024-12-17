@@ -92,15 +92,27 @@ fn app() -> Html {
             </dd>
             <dt class="py-4 text-2xl">{"Event"}</dt>
             <dd class="pb-6">
-                <Button text="console" rounded={Rounded::Full} custom_class="mb-2 mr-2" click={|_| log!("The button has been clicked")} r#type={TypeStyle::Success}/>
-                <Button text="alert" rounded={Rounded::Full} custom_class="mb-2" click={|_| alert("The button has been clicked")} r#type={TypeStyle::Success}/>
+                <Button text="console" custom_class="mb-2 mr-2" click={|_| log!("The button has been clicked")} r#type={TypeStyle::Success}/>
+                <Button text="alert" custom_class="mb-2" click={|_| alert("The button has been clicked")} r#type={TypeStyle::Success}/>
             </dd>
+
+            <dl class="mt-4">
+                <dt class="py-4 text-2xl">{"Icon Button"}</dt>
+                <dd class="pb-6">
+                    <Button rounded={Rounded::Full} icon={IconName::Home} size={SizeStyle::Xs} custom_class="mr-2" r#type={TypeStyle::Primary}/>
+                    <Button text="Xs" icon={IconName::Home} size={SizeStyle::Xs} custom_class="mr-2" r#type={TypeStyle::Primary}/>
+                    <Button text="Xs" icon={IconName::Home} size={SizeStyle::Xs} custom_class="mr-2" r#type={TypeStyle::Danger}/>
+                    <Button text="custom_class" rounded={Rounded::Full} icon={IconName::Home} size={SizeStyle::Lg} custom_class="mr-2 px-6" r#type={TypeStyle::Danger}/>
+                </dd>
+            </dl>
         </dl>
         <hr />
+        <br />
+        <hr />
         <dl class="mt-4">
-            <dt class="py-4 text-2xl">{"Icon"}</dt>
+            <dt class="py-4 text-2xl">{"Icon Component"}</dt>
             <dd class="pb-6">
-                <Icon name={IconName::Home} color={Colors::Red(Number::N500)}/>
+                <Icon name={IconName::Home} color={Colors::Red(Levels::N500)}/>
             </dd>
         </dl>
     </main>
