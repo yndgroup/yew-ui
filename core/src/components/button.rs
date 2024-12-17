@@ -1,7 +1,9 @@
 use yew::prelude::*;
 
-use crate::components::theme::TypeStyle;
+use crate::components::svg::IconName;
+use crate::components::theme::{Colors, TypeStyle};
 
+use super::icon::Icon;
 use super::theme::{Rounded, SizeStyle};
 
 #[derive(Properties, PartialEq, Debug)]
@@ -32,6 +34,9 @@ pub struct ButtonProps {
 
     #[prop_or_default]
     pub disabled: bool,
+
+    #[prop_or_default]
+    pub icon: Option<IconName>,
 }
 
 #[function_component(Button)]
@@ -43,43 +48,33 @@ pub fn button(props: &ButtonProps) -> Html {
 
     let mut type_style = if props.link {
         match props.r#type {
-            TypeStyle::Primary => "text-blue-600 hover:text-blue-300 py-2 px-4".to_string(),
-            TypeStyle::Warning => "text-orange-500 hover:text-orange-300 py-2 px-4".to_string(),
-            TypeStyle::Danger => "text-red-600 hover:text-red-300 py-2 px-4".to_string(),
-            TypeStyle::Success => "text-green-600 hover:text-green-300 py-2 px-4".to_string(),
-            TypeStyle::Info => "text-sky-600 hover:text-sky-300 py-2 px-4".to_string(),
-            TypeStyle::Default => "text-gray-600 hover:text-gray-300 py-2 px-4".to_string(),
+            TypeStyle::Primary => "text-blue-600 hover:text-blue-300".to_string(),
+            TypeStyle::Warning => "text-orange-500 hover:text-orange-300".to_string(),
+            TypeStyle::Danger => "text-red-600 hover:text-red-300".to_string(),
+            TypeStyle::Success => "text-green-600 hover:text-green-300".to_string(),
+            TypeStyle::Info => "text-sky-600 hover:text-sky-300".to_string(),
+            TypeStyle::Default => "text-gray-600 hover:text-gray-300".to_string(),
         }
     } else {
         match props.r#type {
             TypeStyle::Primary => {
-                "bg-blue-500 hover:bg-blue-600 hover:border-blue-700 text-white py-2 px-4"
-                    .to_string()
+                "bg-blue-500 hover:bg-blue-600 hover:border-blue-700 text-white".to_string()
             }
             TypeStyle::Warning => {
-                "bg-orange-500 hover:bg-orange-600 hover:border-orange-700 text-white py-2 px-4"
-                    .to_string()
+                "bg-orange-500 hover:bg-orange-600 hover:border-orange-700 text-white".to_string()
             }
             TypeStyle::Danger => {
-                "bg-red-500 hover:bg-red-600 hover:border-red-700 text-white py-2 px-4".to_string()
+                "bg-red-500 hover:bg-red-600 hover:border-red-700 text-white".to_string()
             }
             TypeStyle::Success => {
-                "bg-green-500 hover:bg-green-600 hover:border-green-700 text-white py-2 px-4"
-                    .to_string()
+                "bg-green-500 hover:bg-green-600 hover:border-green-700 text-white".to_string()
             }
             TypeStyle::Info => {
-                "bg-sky-400 hover:bg-sky-500 hover:border-sky-700 text-white py-2 px-4".to_string()
+                "bg-sky-400 hover:bg-sky-500 hover:border-sky-700 text-white".to_string()
             }
-            TypeStyle::Default => {
-                "bg-gray-100 hover:bg-gray-200 hover:border-gray-300 py-2 px-4".to_string()
-            }
+            TypeStyle::Default => "bg-gray-100 hover:bg-gray-200 hover:border-gray-300".to_string(),
         }
     };
-
-    let custom_class = props.custom_class.clone().unwrap_or("".to_string());
-    if !custom_class.is_empty() {
-        type_style = format!("{} {}", type_style, custom_class);
-    }
 
     if props.block {
         type_style = format!("{} w-full", type_style);
@@ -129,28 +124,28 @@ pub fn button(props: &ButtonProps) -> Html {
 
     match props.rounded {
         Rounded::Full => {
-            type_style = format!("{} rounded-full", type_style);
+            type_style = format!("{} rounded-full px-2 py-2", type_style);
         }
         Rounded::Xl => {
-            type_style = format!("{} rounded-xl", type_style);
+            type_style = format!("{} rounded-xl px-2 py-2 ", type_style);
         }
         Rounded::Xl2 => {
-            type_style = format!("{} rounded-2xl", type_style);
+            type_style = format!("{} rounded-2xl px-2 py-2", type_style);
         }
         Rounded::Xl3 => {
-            type_style = format!("{} rounded-3xl", type_style);
+            type_style = format!("{} rounded-3xl px-2 py-2", type_style);
         }
         Rounded::Lg => {
-            type_style = format!("{} rounded-lg", type_style);
+            type_style = format!("{} rounded-lg px-2 py-2", type_style);
         }
         Rounded::Rounded => {
-            type_style = format!("{} rounded-md", type_style);
+            type_style = format!("{} rounded-md px-2 py-2", type_style);
         }
         Rounded::Sm => {
-            type_style = format!("{} rounded-sm", type_style);
+            type_style = format!("{} rounded-sm px-2 py-2", type_style);
         }
         Rounded::None => {
-            type_style = format!("{} rounded-none", type_style);
+            type_style = format!("{} rounded-none px-2 py-2", type_style);
         }
     }
 
@@ -158,7 +153,27 @@ pub fn button(props: &ButtonProps) -> Html {
         type_style = format!("{} opacity-50 cursor-not-allowed", type_style);
     }
 
+    let color = if props.r#type == TypeStyle::Default {
+        Colors::Custom("#999".to_string())
+    } else {
+        Colors::Custom("#fff".to_string())
+    };
+
+    let custom_class = props.custom_class.clone().unwrap_or("".to_string());
+    if !custom_class.is_empty() {
+        type_style = format!("{} {}", type_style, custom_class);
+    }
+
     html! {
-        <button onclick={click} disabled={props.disabled} class={type_style}>{ format!("{}", props.text.clone().unwrap_or("按钮".to_string())) }</button>
+        <button onclick={click} disabled={props.disabled} class={type_style}>
+            <div class="flex items-center justify-center">
+            if props.icon.is_some() {
+                <span class="px-1">
+                    <Icon name={props.icon.clone().unwrap()} color={color} width={14} height={14} />
+                </span>
+            }
+            { props.text.clone().unwrap_or("".to_string()) }
+            </div>
+        </button>
     }
 }

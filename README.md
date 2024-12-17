@@ -1,8 +1,8 @@
 # yew-ui
 
-A collection of UI components for yew.
+A collection of UI components for `yew`.
 
-## list of tools used
+## List of tools used
 - [rust](https://www.rust-lang.org) 
 - [yew](https://yew.rs/)
 - [gloo](https://docs.rs/gloo/latest/gloo/)
@@ -10,10 +10,8 @@ A collection of UI components for yew.
 - [trunk](https://trunkrs.dev/)
 - [tailwindcss](https://tailwindcss.com/)
 
-## Button
-![img](./docs/assets/button.jpg)
+## Run
 
-## components
 - install trunk
 ```
 cargo install trunk --locked
@@ -22,6 +20,99 @@ cargo install trunk --locked
 ```
 rustup target add wasm32-unknown-unknown
 ```
+
+- run examples
+
+```
+cd examples
+trunk serve
+```
+
+## Target component development
+
+> Explanation: The hook has already been implemented, while the fork has not yet been implemented. Welcome everyone to join, everyone gathers firewood and the flames are high
+
+| Name                     | style | event | complete |
+| ------------------------ | ----- | ----- | -------- |
+| Button                   | ✅     | ✅     | ❌        |
+| Icon                     | ✅     | ❌     | ❌        |
+| Border                   | ❌     | ❌     | ❌        |
+| Container                | ❌     | ❌     | ❌        |
+| Layout                   | ❌     | ❌     | ❌        |
+| Link                     | ❌     | ❌     | ❌        |
+| Text                     | ❌     | ❌     | ❌        |
+| Scrollbar                | ❌     | ❌     | ❌        |
+| Space                    | ❌     | ❌     | ❌        |
+| Typography               | ❌     | ❌     | ❌        |
+| Config Provider          | ❌     | ❌     | ❌        |
+| Autocomplete             | ❌     | ❌     | ❌        |
+| Cascader                 | ❌     | ❌     | ❌        |
+| Checkbox                 | ❌     | ❌     | ❌        |
+| ColorPicker              | ❌     | ❌     | ❌        |
+| DatePicker               | ❌     | ❌     | ❌        |
+| DateTimePicker           | ❌     | ❌     | ❌        |
+| Form                     | ❌     | ❌     | ❌        |
+| Input                    | ❌     | ❌     | ❌        |
+| Input Number             | ❌     | ❌     | ❌        |
+| InputTag                 | ❌     | ❌     | ❌        |
+| Mention                  | ❌     | ❌     | ❌        |
+| Radio                    | ❌     | ❌     | ❌        |
+| Rate                     | ❌     | ❌     | ❌        |
+| Select                   | ❌     | ❌     | ❌        |
+| Virtualized Select       | ❌     | ❌     | ❌        |
+| Slider                   | ❌     | ❌     | ❌        |
+| Switch                   | ❌     | ❌     | ❌        |
+| TimePicker               | ❌     | ❌     | ❌        |
+| TimeSelect               | ❌     | ❌     | ❌        |
+| Transfer                 | ❌     | ❌     | ❌        |
+| TreeSelect               | ❌     | ❌     | ❌        |
+| Upload                   | ❌     | ❌     | ❌        |
+| Avatar                   | ❌     | ❌     | ❌        |
+| Badge                    | ❌     | ❌     | ❌        |
+| Calendar                 | ❌     | ❌     | ❌        |
+| Card                     | ❌     | ❌     | ❌        |
+| Carousel                 | ❌     | ❌     | ❌        |
+| Collapse                 | ❌     | ❌     | ❌        |
+| Descriptions             | ❌     | ❌     | ❌        |
+| Empty                    | ❌     | ❌     | ❌        |
+| Image                    | ❌     | ❌     | ❌        |
+| Infinite Scroll          | ❌     | ❌     | ❌        |
+| Pagination               | ❌     | ❌     | ❌        |
+| Progress                 | ❌     | ❌     | ❌        |
+| Result                   | ❌     | ❌     | ❌        |
+| Skeleton                 | ❌     | ❌     | ❌        |
+| Table                    | ❌     | ❌     | ❌        |
+| Virtualized Table        | ❌     | ❌     | ❌        |
+| Tag                      | ❌     | ❌     | ❌        |
+| Timeline                 | ❌     | ❌     | ❌        |
+| Tour                     | ❌     | ❌     | ❌        |
+| Tree                     | ❌     | ❌     | ❌        |
+| Tree V2 virtualized tree | ❌     | ❌     | ❌        |
+| Statistic                | ❌     | ❌     | ❌        |
+| Segmented                | ❌     | ❌     | ❌        |
+| Affix                    | ❌     | ❌     | ❌        |
+| Anchor                   | ❌     | ❌     | ❌        |
+| Backtop                  | ❌     | ❌     | ❌        |
+| Breadcrumb               | ❌     | ❌     | ❌        |
+| Dropdown                 | ❌     | ❌     | ❌        |
+| Menu                     | ❌     | ❌     | ❌        |
+| Page Header              | ❌     | ❌     | ❌        |
+| Steps                    | ❌     | ❌     | ❌        |
+| Tabs                     | ❌     | ❌     | ❌        |
+| Alert                    | ❌     | ❌     | ❌        |
+| Dialog                   | ❌     | ❌     | ❌        |
+| Drawer                   | ❌     | ❌     | ❌        |
+| Loading                  | ❌     | ❌     | ❌        |
+| Message                  | ❌     | ❌     | ❌        |
+| Message Box              | ❌     | ❌     | ❌        |
+| Notification             | ❌     | ❌     | ❌        |
+| Popconfirm               | ❌     | ❌     | ❌        |
+| Popover                  | ❌     | ❌     | ❌        |
+| Tooltip                  | ❌     | ❌     | ❌        |
+| Divider                  | ❌     | ❌     | ❌        |
+| Watermark                | ❌     | ❌     | ❌        |
+|                          |       |       |          |
+|                          |       |       |          |
 
 ## License
 
