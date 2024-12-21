@@ -1,10 +1,8 @@
 use yew::prelude::*;
 
+use crate::components::icon::Icon;
 use crate::components::svg::IconName;
-use crate::components::theme::{Colors, TypeStyle};
-
-use super::icon::Icon;
-use super::theme::{Rounded, SizeStyle};
+use crate::components::theme::{Colors, Rounded, SizeStyle, TypeStyle};
 
 #[derive(Properties, PartialEq, Debug)]
 pub struct ButtonProps {

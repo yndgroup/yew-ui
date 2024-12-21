@@ -1,11 +1,6 @@
 use yew::prelude::*;
 
-use crate::components::{svg::get_svg, theme::get_color};
-
-use super::{
-    svg::IconName,
-    theme::{Colors, SizeStyle},
-};
+use crate::components::{svg::{get_svg, IconName}, theme::{get_color, Colors, SizeStyle}};
 
 #[derive(Properties, PartialEq, Debug)]
 pub struct IconProps {
