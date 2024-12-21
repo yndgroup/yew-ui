@@ -9,7 +9,9 @@ path = "./src/main.rs"
 
 [dependencies]
 yew =  { workspace = true }
+yew-router = "0.18.0"
 yew-ui = { path = "../core", features = ["gloo", "toolkit"]}
+
 wasm-bindgen = "0.2"
 wasm-bindgen-futures = "0.4"
 web-sys = "0.3"
