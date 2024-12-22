@@ -1,7 +1,4 @@
-use gloo::console::log;
 use yew::prelude::*;
-
-use crate::components::theme::Border;
 
 #[derive(Debug, Clone, PartialEq)]
 pub enum Direction {

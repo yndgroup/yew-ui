@@ -1,3 +1,5 @@
+use std::fmt;
+
 #[derive(PartialEq, Debug)]
 pub enum ColorStyle {
     Primary,
@@ -44,6 +46,24 @@ pub enum ColorLevel {
     N800,
     N900,
     N950,
+}
+
+impl fmt::Display for ColorLevel {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(f, "{}", match self {
+            ColorLevel::N50 => "50".to_string(),
+            ColorLevel::N100 => "100".to_string(),
+            ColorLevel::N200 => "200".to_string(),
+            ColorLevel::N300 => "300".to_string(),
+            ColorLevel::N400 => "400".to_string(),
+            ColorLevel::N500 => "500".to_string(),
+            ColorLevel::N600 => "600".to_string(),
+            ColorLevel::N700 => "600".to_string(),
+            ColorLevel::N800 => "800".to_string(),
+            ColorLevel::N900 => "900".to_string(),
+            ColorLevel::N950 => "950".to_string(),
+        })
+    }
 }
 
 #[derive(PartialEq, Debug, Clone)]

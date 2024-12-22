@@ -1,6 +1,6 @@
 # yew-ui
 
-A collection of UI components for `yew`.
+A collection of UI components for `yew`, Welcome to a star, I will work harder to complete it as soon as possible and provide everyone with a great development experience.
 
 ## List of tools used
 - [rust](https://www.rust-lang.org) 
