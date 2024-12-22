@@ -14,7 +14,7 @@ pub fn page_icon() -> Html {
        <>
             <dl class="mt-4">
             <dd class="pb-6">
-                <Icon name={IconName::Home} color={Colors::Red(Levels::N500)}/>
+                <Icon name={IconName::Home} color={Colors::Red(ColorLevel::N500)}/>
             </dd>
             </dl>
             <Footer prev={"/docs"} next={"/docs"} />
