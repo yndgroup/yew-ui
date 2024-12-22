@@ -58,9 +58,6 @@ mod tests {
             color: BorderColor::Black(BorderPosition::Default),
             style: BorderStyle::Dashed,
         };
-        // let border = Border {
-        //     width: SetBorderWidth::BorderBase,
-        // };
         println!("{:?}", border.to_string())
     }
 }
