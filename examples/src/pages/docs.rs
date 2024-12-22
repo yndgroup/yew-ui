@@ -17,6 +17,13 @@ pub fn page_docs() -> Html {
                         <li class="font-bold pt-3 text-blue-600">
                             <Link<Route> to={Route::PageIcon}>{ "Icon" }</Link<Route>>
                         </li>
+                        <li class="font-bold pt-3 text-blue-600">
+                            <Link<Route> to={Route::PageBorder}>{ "Border" }</Link<Route>>
+                        </li>
+                        <li class="font-bold pt-3 text-blue-600">
+                            <Link<Route> to={Route::PageContainer}>{ "Container" }</Link<Route>>
+                        </li>
+                        
                     </ul>
                 </dd>
             </dl>

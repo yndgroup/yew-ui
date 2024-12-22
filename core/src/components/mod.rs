@@ -1,7 +1,6 @@
 pub mod prelude;
 pub mod affix;
 
-pub mod border;
 pub mod button;
 pub mod container;
 pub mod icon;

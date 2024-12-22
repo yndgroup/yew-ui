@@ -37,7 +37,7 @@ trunk serve
 | Button                   | ✅     | ✅     | ❌        |
 | Icon                     | ✅     | ❌     | ❌        |
 | Border                   | ❌     | ❌     | ❌        |
-| Container                | ❌     | ❌     | ❌        |
+| Container                | ✅     | ❌     | ❌        |
 | Layout                   | ❌     | ❌     | ❌        |
 | Link                     | ❌     | ❌     | ❌        |
 | Text                     | ❌     | ❌     | ❌        |

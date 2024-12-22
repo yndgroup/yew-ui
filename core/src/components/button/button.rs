@@ -2,7 +2,7 @@ use yew::prelude::*;
 
 use crate::components::icon::Icon;
 use crate::components::svg::IconName;
-use crate::components::theme::{Colors, Rounded, SizeStyle, TypeStyle};
+use crate::components::theme::prelude::*;
 
 #[derive(Properties, PartialEq, Debug)]
 pub struct ButtonProps {
@@ -22,7 +22,7 @@ pub struct ButtonProps {
     pub rounded: Rounded,
 
     #[prop_or_default]
-    pub custom_class: Option<String>,
+    pub class: Option<String>,
 
     #[prop_or_default]
     pub block: bool,
@@ -157,9 +157,9 @@ pub fn button(props: &ButtonProps) -> Html {
         Colors::Custom("#fff".to_string())
     };
 
-    let custom_class = props.custom_class.clone().unwrap_or("".to_string());
-    if !custom_class.is_empty() {
-        type_style = format!("{} {}", type_style, custom_class);
+    let class = props.class.clone().unwrap_or("".to_string());
+    if !class.is_empty() {
+        type_style = format!("{} {}", type_style, class);
     }
 
     html! {
