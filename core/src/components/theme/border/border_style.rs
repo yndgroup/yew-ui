@@ -16,13 +16,13 @@ pub enum BorderStyle {
 impl fmt::Display for BorderStyle {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         write!(f, "{}", match self {
-            BorderStyle::Solid => "border-solid",
-            BorderStyle::Dotted => "border-dotted",
-            BorderStyle::Dashed => "border-dashed",
-            BorderStyle::Double => "border-double",
-            BorderStyle::Groove => "border-groove",
-            BorderStyle::Hidden => "border-hidden",
-            BorderStyle::None => "border-none",
+            Self::Solid => "border-solid",
+            Self::Dotted => "border-dotted",
+            Self::Dashed => "border-dashed",
+            Self::Double => "border-double",
+            Self::Groove => "border-groove",
+            Self::Hidden => "border-hidden",
+            Self::None => "border-none",
         })
     }
 }

@@ -52,14 +52,14 @@ impl fmt::Display for BorderPosition {
             f,
             "{}",
             match self {
-                BorderPosition::X => "x".to_string(),
-                BorderPosition::Y => "y".to_string(),
-                BorderPosition::S => "s".to_string(),
-                BorderPosition::E => "e".to_string(),
-                BorderPosition::T => "t".to_string(),
-                BorderPosition::R => "r".to_string(),
-                BorderPosition::B => "b".to_string(),
-                BorderPosition::L => "l".to_string(),
+                Self::X => "x".to_string(),
+                Self::Y => "y".to_string(),
+                Self::S => "s".to_string(),
+                Self::E => "e".to_string(),
+                Self::T => "t".to_string(),
+                Self::R => "r".to_string(),
+                Self::B => "b".to_string(),
+                Self::L => "l".to_string(),
                 Self::Default => "".to_string(),
             }
         )

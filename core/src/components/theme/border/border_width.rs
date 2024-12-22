@@ -79,11 +79,11 @@ impl fmt::Display for BorderBase {
             f,
             "{}",
             match self {
-                BorderBase::V0 => "border-0",
-                BorderBase::V2 => "border-2",
-                BorderBase::V4 => "border-4",
-                BorderBase::V8 => "border-8",
-                BorderBase::Default => "border",
+                Self::V0 => "border-0",
+                Self::V2 => "border-2",
+                Self::V4 => "border-4",
+                Self::V8 => "border-8",
+                Self::Default => "border",
             }
         )
     }
@@ -106,11 +106,11 @@ impl fmt::Display for BorderTop {
             f,
             "{}",
             match self {
-                BorderTop::V0 => "border-t-0",
-                BorderTop::V2 => "border-t-2",
-                BorderTop::V4 => "border-t-4",
-                BorderTop::V8 => "border-t-8",
-                BorderTop::Default => "border-t",
+                Self::V0 => "border-t-0",
+                Self::V2 => "border-t-2",
+                Self::V4 => "border-t-4",
+                Self::V8 => "border-t-8",
+                Self::Default => "border-t",
             }
         )
     }
@@ -133,11 +133,11 @@ impl fmt::Display for BorderRight {
             f,
             "{}",
             match self {
-                BorderRight::V0 => "border-r-0",
-                BorderRight::V2 => "border-r-2",
-                BorderRight::V4 => "border-r-4",
-                BorderRight::V8 => "border-r-8",
-                BorderRight::Default => "border-r",
+                Self::V0 => "border-r-0",
+                Self::V2 => "border-r-2",
+                Self::V4 => "border-r-4",
+                Self::V8 => "border-r-8",
+                Self::Default => "border-r",
             }
         )
     }
@@ -159,11 +159,11 @@ impl fmt::Display for BorderBottom {
             f,
             "{}",
             match self {
-                BorderBottom::V0 => "border-b-0",
-                BorderBottom::V2 => "border-b-2",
-                BorderBottom::V4 => "border-b-4",
-                BorderBottom::V8 => "border-b-8",
-                BorderBottom::Default => "border-b",
+                Self::V0 => "border-b-0",
+                Self::V2 => "border-b-2",
+                Self::V4 => "border-b-4",
+                Self::V8 => "border-b-8",
+                Self::Default => "border-b",
             }
         )
     }
@@ -185,11 +185,11 @@ impl fmt::Display for BorderLeft {
             f,
             "{}",
             match self {
-                BorderLeft::V0 => "border-l-0",
-                BorderLeft::V2 => "border-l-2",
-                BorderLeft::V4 => "border-l-4",
-                BorderLeft::V8 => "border-l-8",
-                BorderLeft::Default => "border-l",
+                Self::V0 => "border-l-0",
+                Self::V2 => "border-l-2",
+                Self::V4 => "border-l-4",
+                Self::V8 => "border-l-8",
+                Self::Default => "border-l",
             }
         )
     }
