@@ -1,9 +1,7 @@
-pub mod border;
 pub mod border_width;
 pub mod border_color;
 pub mod border_style;
 
-pub use border::*;
 pub use border_width::*;
 pub use border_color::*;
 pub use border_style::*;
@@ -19,10 +17,12 @@ pub use divide_width::*;
 pub mod outline_width;
 pub mod outline_color;
 pub mod outline_style;
+pub mod outline_offset;
 
 pub use outline_width::*;
 pub use outline_color::*;
 pub use outline_style::*;
+pub use outline_offset::*;
 
 pub mod ring_width;
 pub mod ring_color;
@@ -32,3 +32,6 @@ pub use ring_width::*;
 pub use ring_color::*;
 pub use ring_offset_width::*;
 pub use ring_offset_color::*;
+
+pub mod border_radius;
+pub use border_radius::*;

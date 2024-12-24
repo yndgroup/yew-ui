@@ -7,7 +7,7 @@ pub enum DivideLevel {
     V4,
     V8,
     Reverse,
-    Default,
+    All,
 }
 
 impl fmt::Display for DivideLevel {
@@ -18,7 +18,7 @@ impl fmt::Display for DivideLevel {
             DivideLevel::V4 => "-4",
             DivideLevel::V8 => "-8",
             DivideLevel::Reverse => "-reverse",
-            DivideLevel::Default => "",
+            DivideLevel::All => "",
         })
     }
 }
@@ -55,8 +55,8 @@ mod tests {
         assert_eq!("divide-x-reverse", x_reverse.to_string());
         assert_eq!("divide-y-reverse", y_reverse.to_string());
 
-        let d_x = DivideWidth::X(DivideLevel::Default);
-        let d_y = DivideWidth::Y(DivideLevel::Default);
+        let d_x = DivideWidth::X(DivideLevel::All);
+        let d_y = DivideWidth::Y(DivideLevel::All);
         println!("divide-x => {}", d_x);
         assert_eq!("divide-x", d_x.to_string());
         assert_eq!("divide-y", d_y.to_string());

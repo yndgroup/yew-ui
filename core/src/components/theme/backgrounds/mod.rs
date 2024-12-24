@@ -11,8 +11,3 @@ pub mod background_image;
 pub use background_attachment::*;
 pub use background_clip::*;
 pub use background_color::*;
-pub use background_color_stops::*;
-pub use background_origin::*;
-pub use background_position::*;
-pub use background_repeat::*;
-pub use background_size::*;

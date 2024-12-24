@@ -37,13 +37,13 @@ pub enum BorderColor {
 pub enum BorderPosition {
     X,
     Y,
-    S,
-    E,
-    T,
-    R,
-    B,
-    L,
-    Default,
+    InlineStart,
+    InlineEnd,
+    Top,
+    Right,
+    Bottom,
+    Left,
+    All,
 }
 
 impl fmt::Display for BorderPosition {
@@ -54,13 +54,13 @@ impl fmt::Display for BorderPosition {
             match self {
                 Self::X => "x".to_string(),
                 Self::Y => "y".to_string(),
-                Self::S => "s".to_string(),
-                Self::E => "e".to_string(),
-                Self::T => "t".to_string(),
-                Self::R => "r".to_string(),
-                Self::B => "b".to_string(),
-                Self::L => "l".to_string(),
-                Self::Default => "".to_string(),
+                Self::InlineStart => "s".to_string(),
+                Self::InlineEnd => "e".to_string(),
+                Self::Top => "t".to_string(),
+                Self::Right => "r".to_string(),
+                Self::Bottom => "b".to_string(),
+                Self::Left => "l".to_string(),
+                Self::All => "".to_string(),
             }
         )
     }
@@ -70,115 +70,115 @@ impl fmt::Display for BorderColor {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         write!(
             f,
-            "{}",
+            "border-{}",
             match self {
                 BorderColor::Inherit(bp) => match bp {
-                    BorderPosition::Default => "border-inherit".to_string(),
-                    _ => format!("border-{}-current", bp),
+                    BorderPosition::All => "inherit".to_string(),
+                    _ => format!("{}-current", bp),
                 },
                 BorderColor::Current(bp) => match bp {
-                    BorderPosition::Default => "border-current".to_string(),
-                    _ => format!("border-{}-current", bp),
+                    BorderPosition::All => "current".to_string(),
+                    _ => format!("{}-current", bp),
                 },
                 BorderColor::Transparent(bp) => match bp {
-                    BorderPosition::Default => "border-transparent".to_string(),
-                    _ => format!("border-{}-transparent", bp),
+                    BorderPosition::All => "transparent".to_string(),
+                    _ => format!("{}-transparent", bp),
                 },
                 BorderColor::Black(bp) => match bp {
-                    BorderPosition::Default => "border-black".to_string(),
-                    _ => format!("border-{}-black", bp),
+                    BorderPosition::All => "black".to_string(),
+                    _ => format!("{}-black", bp),
                 },
                 BorderColor::White(bp) => match bp {
-                    BorderPosition::Default => "border-white".to_string(),
-                    _ => format!("border-{}-white", bp),
+                    BorderPosition::All => "white".to_string(),
+                    _ => format!("{}-white", bp),
                 },
                 BorderColor::Slate(cv, bp) => match bp {
-                    BorderPosition::Default => format!("border-slate-{}", cv),
-                    _ => format!("border-{}-slate-{}", bp, cv),
+                    BorderPosition::All => format!("slate-{}", cv),
+                    _ => format!("{}-slate-{}", bp, cv),
                 },
                 BorderColor::Gray(cv, bp) => match bp {
-                    BorderPosition::Default => format!("border-gray-{}", cv),
-                    _ => format!("border-{}-gray-{}", bp, cv),
+                    BorderPosition::All => format!("gray-{}", cv),
+                    _ => format!("{}-gray-{}", bp, cv),
                 },
                 BorderColor::Zinc(cv, bp) => match bp {
-                    BorderPosition::Default => format!("border-zinc-{}", cv),
-                    _ => format!("border-{}-zinc-{}", bp, cv),
+                    BorderPosition::All => format!("zinc-{}", cv),
+                    _ => format!("{}-zinc-{}", bp, cv),
                 },
                 BorderColor::Neutral(cv, bp) => match bp {
-                    BorderPosition::Default => format!("border-neutral-{}", cv),
-                    _ => format!("border-{}-neutral-{}", bp, cv),
+                    BorderPosition::All => format!("neutral-{}", cv),
+                    _ => format!("{}-neutral-{}", bp, cv),
                 },
                 BorderColor::Stone(cv, bp) => match bp {
-                    BorderPosition::Default => format!("border-stone-{}", cv),
-                    _ => format!("border-{}-stone-{}", bp, cv),
+                    BorderPosition::All => format!("stone-{}", cv),
+                    _ => format!("{}-stone-{}", bp, cv),
                 },
                 BorderColor::Red(cv, bp) => match bp {
-                    BorderPosition::Default => format!("border-red-{}", cv),
-                    _ => format!("border-{}-red-{}", bp, cv),
+                    BorderPosition::All => format!("red-{}", cv),
+                    _ => format!("{}-red-{}", bp, cv),
                 },
                 BorderColor::Orange(cv, bp) => match bp {
-                    BorderPosition::Default => format!("border-orange-{}", cv),
-                    _ => format!("border-{}-orange-{}", bp, cv),
+                    BorderPosition::All => format!("orange-{}", cv),
+                    _ => format!("{}-orange-{}", bp, cv),
                 },
                 BorderColor::Amber(cv, bp) => match bp {
-                    BorderPosition::Default => format!("border-amber-{}", cv),
-                    _ => format!("border-{}-amber-{}", bp, cv),
+                    BorderPosition::All => format!("amber-{}", cv),
+                    _ => format!("{}-amber-{}", bp, cv),
                 },
                 BorderColor::Yellow(cv, bp) => match bp {
-                    BorderPosition::Default => format!("border-yellow-{}", cv),
-                    _ => format!("border-{}-yellow-{}", bp, cv),
+                    BorderPosition::All => format!("yellow-{}", cv),
+                    _ => format!("{}-yellow-{}", bp, cv),
                 },
                 BorderColor::Lime(cv, bp) => match bp {
-                    BorderPosition::Default => format!("border-lime-{}", cv),
-                    _ => format!("border-{}-lime-{}", bp, cv),
+                    BorderPosition::All => format!("lime-{}", cv),
+                    _ => format!("{}-lime-{}", bp, cv),
                 },
                 BorderColor::Green(cv, bp) => match bp {
-                    BorderPosition::Default => format!("border-green-{}", cv),
-                    _ => format!("border-{}-green-{}", bp, cv),
+                    BorderPosition::All => format!("green-{}", cv),
+                    _ => format!("{}-green-{}", bp, cv),
                 },
                 BorderColor::Emerald(cv, bp) => match bp {
-                    BorderPosition::Default => format!("border-emerald-{}", cv),
-                    _ => format!("border-{}-emerald-{}", bp, cv),
+                    BorderPosition::All => format!("emerald-{}", cv),
+                    _ => format!("{}-emerald-{}", bp, cv),
                 },
                 BorderColor::Teal(cv, bp) => match bp {
-                    BorderPosition::Default => format!("border-teal-{}", cv),
-                    _ => format!("border-{}-teal-{}", bp, cv),
+                    BorderPosition::All => format!("teal-{}", cv),
+                    _ => format!("{}-teal-{}", bp, cv),
                 },
                 BorderColor::Cyan(cv, bp) => match bp {
-                    BorderPosition::Default => format!("border-cyan-{}", cv),
-                    _ => format!("border-{}-cyan-{}", bp, cv),
+                    BorderPosition::All => format!("cyan-{}", cv),
+                    _ => format!("{}-cyan-{}", bp, cv),
                 },
                 BorderColor::Sky(cv, bp) => match bp {
-                    BorderPosition::Default => format!("border-sky-{}", cv),
-                    _ => format!("border-{}-sky-{}", bp, cv),
+                    BorderPosition::All => format!("sky-{}", cv),
+                    _ => format!("{}-sky-{}", bp, cv),
                 },
                 BorderColor::Blue(cv, bp) => match bp {
-                    BorderPosition::Default => format!("border-blue-{}", cv),
-                    _ => format!("border-{}-blue-{}", bp, cv),
+                    BorderPosition::All => format!("blue-{}", cv),
+                    _ => format!("{}-blue-{}", bp, cv),
                 },
                 BorderColor::Indigo(cv, bp) => match bp {
-                    BorderPosition::Default => format!("border-indigo-{}", cv),
-                    _ => format!("border-{}-indigo-{}", bp, cv),
+                    BorderPosition::All => format!("indigo-{}", cv),
+                    _ => format!("{}-indigo-{}", bp, cv),
                 },
                 BorderColor::Violet(cv, bp) => match bp {
-                    BorderPosition::Default => format!("border-violet-{}", cv),
-                    _ => format!("border-{}-violet-{}", bp, cv),
+                    BorderPosition::All => format!("violet-{}", cv),
+                    _ => format!("{}-violet-{}", bp, cv),
                 },
                 BorderColor::Purple(cv, bp) => match bp {
-                    BorderPosition::Default => format!("border-purple-{}", cv),
-                    _ => format!("border-{}-purple-{}", bp, cv),
+                    BorderPosition::All => format!("purple-{}", cv),
+                    _ => format!("{}-purple-{}", bp, cv),
                 },
                 BorderColor::Fuchsia(cv, bp) => match bp {
-                    BorderPosition::Default => format!("border-fuchsia-{}", cv),
-                    _ => format!("border-{}-fuchsia-{}", bp, cv),
+                    BorderPosition::All => format!("fuchsia-{}", cv),
+                    _ => format!("{}-fuchsia-{}", bp, cv),
                 },
                 BorderColor::Pink(cv, bp) => match bp {
-                    BorderPosition::Default => format!("border-pink-{}", cv),
-                    _ => format!("border-{}-pink-{}", bp, cv),
+                    BorderPosition::All => format!("pink-{}", cv),
+                    _ => format!("{}-pink-{}", bp, cv),
                 },
                 BorderColor::Rose(cv, bp) => match bp {
-                    BorderPosition::Default => format!("border-rose-{}", cv),
-                    _ => format!("border-{}-rose-{}", bp, cv),
+                    BorderPosition::All => format!("rose-{}", cv),
+                    _ => format!("{}-rose-{}", bp, cv),
                 },
             }
         )
@@ -194,7 +194,8 @@ mod tests {
 
     #[test]
     fn test_color_display() {
-        assert_eq!("border-gray-100", BorderColor::Gray(ColorEnum::V100, BorderPosition::Default).to_string());
+        assert_eq!("border-gray-100", BorderColor::Gray(ColorEnum::V100, BorderPosition::All).to_string());
+        assert_eq!("border-inherit", BorderColor::Inherit(BorderPosition::All).to_string());
         assert_eq!("border-x-gray-100", BorderColor::Gray(ColorEnum::V100, BorderPosition::X).to_string());
         assert_eq!("border-y-gray-100", BorderColor::Gray(ColorEnum::V100, BorderPosition::Y).to_string());
     }

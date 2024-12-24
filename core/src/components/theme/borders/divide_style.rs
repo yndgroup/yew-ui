@@ -15,14 +15,14 @@ pub enum DivideStyle {
 
 impl fmt::Display for DivideStyle {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        write!(f, "{}", match self {
-            Self::Solid => "divide-solid",
-            Self::Dotted => "divide-dotted",
-            Self::Dashed => "divide-dashed",
-            Self::Double => "divide-double",
-            Self::Groove => "divide-groove",
-            Self::Hidden => "divide-hidden",
-            Self::None => "divide-none",
+        write!(f, "divide-{}", match self {
+            Self::Solid => "solid",
+            Self::Dotted => "dotted",
+            Self::Dashed => "dashed",
+            Self::Double => "double",
+            Self::Groove => "groove",
+            Self::Hidden => "hidden",
+            Self::None => "none",
         })
     }
 }
