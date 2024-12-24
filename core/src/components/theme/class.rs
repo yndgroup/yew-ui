@@ -1,11 +1,11 @@
 use super::{BorderColor, BorderRadius, BorderStyle, BorderWidth, Colors, DivideColor, DivideStyle, DivideWidth, OutlineColor, OutlineOffset, OutlineStyle, OutlineWidth, RingColor, RingOffsetColor, RingOffsetWidth, RingWidth, TypeEnum};
 
 #[derive(Clone, Debug)]
-pub struct Class {
+pub struct ClassBuilder {
     class_name: Vec<String>,
 }
 
-impl Class {
+impl ClassBuilder {
     pub fn new() -> Self {
         Self {
             class_name: Vec::new(),
@@ -127,7 +127,7 @@ mod tests {
     use super::*;
     #[test]
     fn test_get_type() {
-        let mut class = Class::new();
+        let mut class = ClassBuilder::new();
         class
             /* .set_type(TypeEnum::Primary)
             .set_color(Colors::Blue(ColorEnum::V100)) */
