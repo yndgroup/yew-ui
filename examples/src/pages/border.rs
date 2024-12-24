@@ -9,7 +9,7 @@ pub fn page_border() -> Html {
             <p>{"我们对边框进行统一规范，可用于按钮、卡片、弹窗等组件里。"}</p>
             <Container border={Border{
                 width: SetBorderWidth::default(), 
-                color: BorderColor::Red(ColorLevel::N500, BorderPosition::Default),
+                color: BorderColor::Red(ColorEnum::V500, BorderPosition::Default),
                 style: BorderStyle::Dashed
             }.to_string()}>
                 {1111}

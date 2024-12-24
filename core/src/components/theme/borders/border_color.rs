@@ -1,6 +1,6 @@
 use std::fmt;
 
-use crate::components::theme::ColorLevel;
+use crate::components::theme::ColorEnum;
 
 #[derive(Clone, Debug, PartialEq)]
 pub enum BorderColor {
@@ -9,28 +9,28 @@ pub enum BorderColor {
     Transparent(BorderPosition),
     Black(BorderPosition),
     White(BorderPosition),
-    Slate(ColorLevel, BorderPosition),
-    Gray(ColorLevel, BorderPosition),
-    Zinc(ColorLevel, BorderPosition),
-    Neutral(ColorLevel, BorderPosition),
-    Stone(ColorLevel, BorderPosition),
-    Red(ColorLevel, BorderPosition),
-    Orange(ColorLevel, BorderPosition),
-    Amber(ColorLevel, BorderPosition),
-    Yellow(ColorLevel, BorderPosition),
-    Lime(ColorLevel, BorderPosition),
-    Green(ColorLevel, BorderPosition),
-    Emerald(ColorLevel, BorderPosition),
-    Teal(ColorLevel, BorderPosition),
-    Cyan(ColorLevel, BorderPosition),
-    Sky(ColorLevel, BorderPosition),
-    Blue(ColorLevel, BorderPosition),
-    Indigo(ColorLevel, BorderPosition),
-    Violet(ColorLevel, BorderPosition),
-    Purple(ColorLevel, BorderPosition),
-    Fuchsia(ColorLevel, BorderPosition),
-    Pink(ColorLevel, BorderPosition),
-    Rose(ColorLevel, BorderPosition),
+    Slate(ColorEnum, BorderPosition),
+    Gray(ColorEnum, BorderPosition),
+    Zinc(ColorEnum, BorderPosition),
+    Neutral(ColorEnum, BorderPosition),
+    Stone(ColorEnum, BorderPosition),
+    Red(ColorEnum, BorderPosition),
+    Orange(ColorEnum, BorderPosition),
+    Amber(ColorEnum, BorderPosition),
+    Yellow(ColorEnum, BorderPosition),
+    Lime(ColorEnum, BorderPosition),
+    Green(ColorEnum, BorderPosition),
+    Emerald(ColorEnum, BorderPosition),
+    Teal(ColorEnum, BorderPosition),
+    Cyan(ColorEnum, BorderPosition),
+    Sky(ColorEnum, BorderPosition),
+    Blue(ColorEnum, BorderPosition),
+    Indigo(ColorEnum, BorderPosition),
+    Violet(ColorEnum, BorderPosition),
+    Purple(ColorEnum, BorderPosition),
+    Fuchsia(ColorEnum, BorderPosition),
+    Pink(ColorEnum, BorderPosition),
+    Rose(ColorEnum, BorderPosition),
 }
 
 #[derive(Clone, Debug, PartialEq)]
@@ -188,12 +188,14 @@ impl fmt::Display for BorderColor {
 #[cfg(test)]
 mod tests {
 
+    use crate::components::theme::ColorEnum;
+
     use super::*;
 
     #[test]
     fn test_color_display() {
-        assert_eq!("border-gray-100", BorderColor::Gray(ColorLevel::N100, BorderPosition::Default).to_string());
-        assert_eq!("border-x-gray-100", BorderColor::Gray(ColorLevel::N100, BorderPosition::X).to_string());
-        assert_eq!("border-y-gray-100", BorderColor::Gray(ColorLevel::N100, BorderPosition::Y).to_string());
+        assert_eq!("border-gray-100", BorderColor::Gray(ColorEnum::V100, BorderPosition::Default).to_string());
+        assert_eq!("border-x-gray-100", BorderColor::Gray(ColorEnum::V100, BorderPosition::X).to_string());
+        assert_eq!("border-y-gray-100", BorderColor::Gray(ColorEnum::V100, BorderPosition::Y).to_string());
     }
 }

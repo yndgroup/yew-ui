@@ -1,6 +1,6 @@
 use std::fmt;
 
-use crate::components::theme::ColorLevel;
+use crate::components::theme::ColorEnum;
 
 #[derive(Clone, Debug, PartialEq)]
 pub enum RingOffsetColor {
@@ -9,28 +9,28 @@ pub enum RingOffsetColor {
     Transparent,
     Black,
     White,
-    Slate(ColorLevel),
-    Gray(ColorLevel),
-    Zinc(ColorLevel),
-    Neutral(ColorLevel),
-    Stone(ColorLevel),
-    Red(ColorLevel),
-    Orange(ColorLevel),
-    Amber(ColorLevel),
-    Yellow(ColorLevel),
-    Lime(ColorLevel),
-    Green(ColorLevel),
-    Emerald(ColorLevel),
-    Teal(ColorLevel),
-    Cyan(ColorLevel),
-    Sky(ColorLevel),
-    Blue(ColorLevel),
-    Indigo(ColorLevel),
-    Violet(ColorLevel),
-    Purple(ColorLevel),
-    Fuchsia(ColorLevel),
-    Pink(ColorLevel),
-    Rose(ColorLevel),
+    Slate(ColorEnum),
+    Gray(ColorEnum),
+    Zinc(ColorEnum),
+    Neutral(ColorEnum),
+    Stone(ColorEnum),
+    Red(ColorEnum),
+    Orange(ColorEnum),
+    Amber(ColorEnum),
+    Yellow(ColorEnum),
+    Lime(ColorEnum),
+    Green(ColorEnum),
+    Emerald(ColorEnum),
+    Teal(ColorEnum),
+    Cyan(ColorEnum),
+    Sky(ColorEnum),
+    Blue(ColorEnum),
+    Indigo(ColorEnum),
+    Violet(ColorEnum),
+    Purple(ColorEnum),
+    Fuchsia(ColorEnum),
+    Pink(ColorEnum),
+    Rose(ColorEnum),
 }
 
 impl fmt::Display for RingOffsetColor {
@@ -78,8 +78,8 @@ mod tests {
 
     #[test]
     fn test_outline_color_display() {
-        assert_eq!("ring-offset-gray-100", RingOffsetColor::Gray(ColorLevel::N100).to_string());
-        assert_eq!("ring-offset-red-100", RingOffsetColor::Red(ColorLevel::N100).to_string());
-        assert_eq!("ring-offset-teal-100", RingOffsetColor::Teal(ColorLevel::N100).to_string());
+        assert_eq!("ring-offset-gray-100", RingOffsetColor::Gray(ColorEnum::V100).to_string());
+        assert_eq!("ring-offset-red-100", RingOffsetColor::Red(ColorEnum::V100).to_string());
+        assert_eq!("ring-offset-teal-100", RingOffsetColor::Teal(ColorEnum::V100).to_string());
     }
 }

@@ -13,7 +13,7 @@ pub struct ButtonProps {
     pub click: Callback<()>,
 
     #[prop_or_default]
-    pub r#type: TypeStyle,
+    pub r#type: TypeEnum,
 
     #[prop_or_default]
     pub size: SizeStyle,
@@ -46,31 +46,31 @@ pub fn button(props: &ButtonProps) -> Html {
 
     let mut type_style = if props.link {
         match props.r#type {
-            TypeStyle::Primary => "text-blue-600 hover:text-blue-300".to_string(),
-            TypeStyle::Warning => "text-orange-500 hover:text-orange-300".to_string(),
-            TypeStyle::Danger => "text-red-600 hover:text-red-300".to_string(),
-            TypeStyle::Success => "text-green-600 hover:text-green-300".to_string(),
-            TypeStyle::Info => "text-sky-600 hover:text-sky-300".to_string(),
-            TypeStyle::Default => "text-gray-600 hover:text-gray-300".to_string(),
+            TypeEnum::Primary => "text-blue-600 hover:text-blue-300".to_string(),
+            TypeEnum::Warning => "text-orange-500 hover:text-orange-300".to_string(),
+            TypeEnum::Danger => "text-red-600 hover:text-red-300".to_string(),
+            TypeEnum::Success => "text-green-600 hover:text-green-300".to_string(),
+            TypeEnum::Info => "text-sky-600 hover:text-sky-300".to_string(),
+            TypeEnum::Default => "text-gray-600 hover:text-gray-300".to_string(),
         }
     } else {
         match props.r#type {
-            TypeStyle::Primary => {
+            TypeEnum::Primary => {
                 "bg-blue-500 hover:bg-blue-600 hover:border-blue-700 text-white".to_string()
             }
-            TypeStyle::Warning => {
+            TypeEnum::Warning => {
                 "bg-orange-500 hover:bg-orange-600 hover:border-orange-700 text-white".to_string()
             }
-            TypeStyle::Danger => {
+            TypeEnum::Danger => {
                 "bg-red-500 hover:bg-red-600 hover:border-red-700 text-white".to_string()
             }
-            TypeStyle::Success => {
+            TypeEnum::Success => {
                 "bg-green-500 hover:bg-green-600 hover:border-green-700 text-white".to_string()
             }
-            TypeStyle::Info => {
+            TypeEnum::Info => {
                 "bg-sky-400 hover:bg-sky-500 hover:border-sky-700 text-white".to_string()
             }
-            TypeStyle::Default => "bg-gray-100 hover:bg-gray-200 hover:border-gray-300".to_string(),
+            TypeEnum::Default => "bg-gray-100 hover:bg-gray-200 hover:border-gray-300".to_string(),
         }
     };
 
@@ -151,7 +151,7 @@ pub fn button(props: &ButtonProps) -> Html {
         type_style = format!("{} opacity-50 cursor-not-allowed", type_style);
     }
 
-    let color = if props.r#type == TypeStyle::Default {
+    let color = if props.r#type == TypeEnum::Default {
         Colors::Custom("#999".to_string())
     } else {
         Colors::Custom("#fff".to_string())

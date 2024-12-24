@@ -33,13 +33,13 @@ impl fmt::Display for Divide {
 
 #[cfg(test)]
 mod tests {
-    use crate::components::theme::{prelude::{Border, BorderBase, BorderBottom, BorderLeft, BorderRight, BorderTop, BorderWidth, SetBorderWidth}, BorderColor, BorderPosition, BorderStyle, ColorLevel, Divide, DivideColor, DivideLevel, DivideStyle, DivideWidth};
+    use crate::components::theme::{prelude::{Border, BorderBase, BorderBottom, BorderLeft, BorderRight, BorderTop, BorderWidth, SetBorderWidth}, BorderColor, BorderPosition, BorderStyle, ColorEnum, Divide, DivideColor, DivideLevel, DivideStyle, DivideWidth};
 
     #[test]
     fn test_divide_display() {
         let divide = Divide {
             width: DivideWidth::Y(DivideLevel::Reverse),
-            color: DivideColor::Violet(ColorLevel::N100),
+            color: DivideColor::Violet(ColorEnum::V100),
             style: DivideStyle::Solid,
         };
         println!("{:?}", divide.to_string())

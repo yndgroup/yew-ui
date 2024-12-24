@@ -1,6 +1,6 @@
 use yew::prelude::*;
 
-use crate::components::{svg::{get_svg, IconName}, theme::{get_color, Colors, SizeStyle}};
+use crate::components::{svg::{get_svg, IconName}, theme::{Colors, SizeStyle}};
 
 #[derive(Properties, PartialEq, Debug)]
 pub struct IconProps {
@@ -33,7 +33,7 @@ pub fn icon(props: &IconProps) -> Html {
         props.height.clone()
     };
 
-    let colors = get_color(props.color.clone());
+    let colors = props.color.clone().to_string();
 
     html! {
         <img src={get_svg(props.name.clone(), width, height, colors)} class="text-blue-800" alt="Icon show failed" />
