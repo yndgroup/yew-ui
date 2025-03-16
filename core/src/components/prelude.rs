@@ -4,3 +4,4 @@ pub use crate::components::theme::*;
 pub use crate::components::icon::*;
 pub use crate::components::svg::*;
 pub use crate::components::container::*;
+pub use crate::components::card::*;

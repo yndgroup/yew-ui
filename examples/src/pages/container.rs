@@ -3,7 +3,6 @@ use yew_ui::components::prelude::*;
 use yew_ui::gloo::console::log;
 
 use yew_ui::toolkit::math::add;
-
 use crate::components::Footer as CFooter;
 
 #[function_component(PageContainer)]
@@ -44,7 +43,7 @@ pub fn page_container() -> Html {
                             {"header"}
                         </Header>
                         <Container direction={Direction::Row}>
-                            <Aside class="bg-sky-200 h-[150px]" width={"400px"}>
+                            <Aside class="bg-sky-200 h-[100px]" width={"400px"}>
                                 {"aside"}
                             </Aside>
                             <Main class="bg-blue-200 h-[150px] flex-1">

@@ -12,5 +12,5 @@ rustup target add wasm32-unknown-unknown
 
 ## 运行服务
 ```
-turn serve --open
+trunk serve --open
 ```

@@ -1,7 +1,15 @@
 use yew_router::prelude::*;
 use yew::prelude::*;
 
-use crate::pages::{PageBorder, PageButton, PageContainer, PageDocs, PageHome, PageIcon};
+use crate::pages::{
+    PageBorder,
+    PageCard,
+    PageButton,
+    PageContainer,
+    PageDocs,
+    PageHome,
+    PageIcon
+};
 
 #[derive(Clone, Routable, PartialEq)]
 pub enum Route {
@@ -23,6 +31,9 @@ pub enum Route {
     #[at("/container")]
     PageContainer,
 
+    #[at("/card")]
+    PageCard,
+
     #[not_found]
     #[at("/404")]
     NotFound,
@@ -39,6 +50,9 @@ pub fn switch(routes: Route) -> Html {
         },
         Route::PageBorder => html! {
             <PageBorder />
+        },
+        Route::PageCard => html! {
+            <PageCard />
         },
         Route::PageDocs => html! {
             <PageDocs />

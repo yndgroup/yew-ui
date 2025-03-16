@@ -5,6 +5,7 @@ target = "index.html"
 # public_url = "./"
 
 [watch]
+paths = ["src", "core_dir "]
 # ignore = ["src"]
 
 # [[assets]]
