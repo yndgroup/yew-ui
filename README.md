@@ -35,9 +35,9 @@ trunk serve
 | Name                     | style | event | complete |
 | ------------------------ | ----- | ----- | -------- |
 | Button                   | ✅     | ✅     | ❌        |
-| Icon                     | ✅     | ❌     | ❌        |
+| Icon                     | ✅     | ✅     | ❌        |
 | Border                   | ❌     | ❌     | ❌        |
-| Container                | ✅     | ❌     | ❌        |
+| Container                | ✅     | ✅     | ❌        |
 | Layout                   | ❌     | ❌     | ❌        |
 | Link                     | ❌     | ❌     | ❌        |
 | Text                     | ❌     | ❌     | ❌        |
