@@ -14,3 +14,8 @@ rustup target add wasm32-unknown-unknown
 ```
 trunk serve --open
 ```
+
+## 运行监听源码目录
+```
+trunk serve --watch ../core  --open
+```

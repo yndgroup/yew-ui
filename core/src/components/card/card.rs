@@ -44,7 +44,7 @@ impl Component for Card {
 
         html! {
             <div class={class}>
-            {"1"}
+            {"sssqqq1"}
             {self.props.children.clone()}
             </div>
         }
